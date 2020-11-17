@@ -1,1 +1,79 @@
-/* <!-- We got this guys! We are team --> */
+/* started the whole css to accomidate  */
+.parent-container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+  justify-content: center;
+  /* grid-template-rows: 30% 30% 30%; */
+}
+.a1 {
+  /* grid-column-start: 1;
+        grid-column-end: 2; */
+  background-color: aqua;
+}
+.a2 {
+  /* grid-column-start: 2;
+        grid-column-end: 3; */
+  background-color: aliceblue;
+}
+.a3 {
+  /* grid-column-start: 3;
+        grid-column-end: 4; */
+  background-color: antiquewhite;
+}
+
+/*  */
+@media (min-width: 768px) {
+  .parent-container {
+    /* display: grid; */
+    grid-template-columns: 30% 30% 30%;
+  }
+  .grid-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: aqua;
+  }
+  .grid-item-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: aliceblue;
+  }
+  .grid-item-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: antiquewhite;
+  }
+}
+
+@media (min-width: 1024px) {
+  .parent-container {
+    grid-template-columns: 30% 30% 30%;
+  }
+  .grid-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: aqua;
+  }
+  .grid-item-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: aliceblue;
+    grid-row: span 2;
+  }
+  .grid-item-3 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+
+    background-color: antiquewhite;
+  }
+  .grid-item-4 {
+  }
+  .grid-item-5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .grid-item-6 {
+    grid-column-start: -1;
+    grid-column-end: -4;
+  }
+}
