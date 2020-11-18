@@ -73,14 +73,14 @@ ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
 		<li>${drink.strIngredient6}, ${drink.strMeasure6}</li>
 		<li>Make it: ${drinkInstruct}</li>
 		`;
-		let filteredList = function (obj) {
-			for (var empty in drinkInfoList) {
-				if (drink.strMeasure6 === null) {
-					delete drink.strMeasure6;
-					return filteredList;
-				}
-			}
-		};
+		// let filteredList = function (obj) {
+		// 	for (var empty in drinkInfoList) {
+		// 		if (drink.strMeasure6 === null) {
+		// 			delete drink.strMeasure6;
+		// 			return filteredList;
+		// 		}
+		// 	}
+		// };
 		// append button to drink list
 		buttonDrink.innerHTML = 'New Cocktail Recipe!';
 		drinkInfoList.append(buttonDrink);
