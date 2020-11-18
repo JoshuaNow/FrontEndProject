@@ -66,8 +66,8 @@
 
     background-color: antiquewhite;
   }
-  .grid-item-4 {
-  }
+  /* .grid-item-4 {
+  } */
   .grid-item-5 {
     grid-column-start: 2;
     grid-column-end: 4;
@@ -76,4 +76,10 @@
     grid-column-start: -1;
     grid-column-end: -4;
   }
+}
+
+video {
+  width: 100%;
+  height: auto;
+  /* justify-content: center; */
 }
