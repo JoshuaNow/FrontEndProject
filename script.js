@@ -61,28 +61,29 @@ const getCocktails = () => {
       let drinkInfoList = document.createElement("li");
       drinkInfoList.setAttribute("id", "drink-info");
       drinkInfoList.innerHTML = `
-		Cocktail: ${drinkTitle}
-		<li>Category: ${drinkCategory}</li>
-		<li>Glass: ${drinkGlass}</li>
-		<li>Ingredients:</li>
+		<b>Cocktail:</b> ${drinkTitle}
+		<li><b>Category:</b> ${drinkCategory}</li>
+		<li><b>Glass:</b> ${drinkGlass}</li>
+		<li><b>Ingredients:</b></li>
 		<li>${drink.strIngredient1}, ${drink.strMeasure1}</li>
 		<li>${drink.strIngredient2}, ${drink.strMeasure2}</li>
 		<li>${drink.strIngredient3}, ${drink.strMeasure3}</li>
 		<li>${drink.strIngredient4}, ${drink.strMeasure4}</li>
 		<li>${drink.strIngredient5}, ${drink.strMeasure5}</li>
 		<li>${drink.strIngredient6}, ${drink.strMeasure6}</li>
-		<li>Make it: ${drinkInstruct}</li>
+		<li><b>Make it:</b></li>
+		<li>${drinkInstruct}</li>
 		`;
-      // let filteredList = function (obj) {
-      // 	for (var empty in drinkInfoList) {
-      // 		if (drink.strMeasure6 === null) {
-      // 			delete drink.strMeasure6;
-      // 			return filteredList;
-      // 		}
-      // 	}
-      // };
+      let filteredList = function (obj) {
+        for (var empty in drinkInfoList) {
+          if (drink.strMeasure6 === null) {
+            delete drink.strMeasure6;
+            return filteredList;
+          }
+        }
+      };
       // append button to drink list
-      buttonDrink.innerHTML = "New Cocktail Recipe!";
+      buttonDrink.innerHTML = "New Cocktail Recipe";
       drinkInfoList.append(buttonDrink);
 
       // create cocktail card + append to page
@@ -100,7 +101,6 @@ const getCocktails = () => {
 };
 getCocktails();
 
-//getNewArticles
 ajax(
   "https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5",
   (res) => {
@@ -111,7 +111,7 @@ ajax(
         return event.section == "dining"; //&& event.subsection == "food";
       })
       .forEach((event, idx) => {
-        if (idx >= 6) return;
+        if (idx >= 8) return;
         createCard(event);
 
         //        //DOM Elements
