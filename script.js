@@ -1,11 +1,11 @@
-import ajax from './ajax.js';
-import { createCard } from './cardFunction.js';
+import ajax from "./ajax.js";
+import { createCard } from "./cardFunction.js";
 
 //let main = document.querySelector("main");
 //let mainDiv = document.createElement("div")
 //main.append(mainDiv);
 
-let body = document.querySelector('body');
+let body = document.querySelector("body");
 
 //ajax(
 //	'https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5',
@@ -36,31 +36,31 @@ let body = document.querySelector('body');
 //	}
 //);
 const getCocktails = () => {
-	ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
-		let resArr2 = JSON.parse(res).drinks;
-		resArr2.forEach((drink) => {
-			// Cocktail API DOM elements
-			let drinkTitle = drink.strDrink;
-			let drinkCategory = drink.strCategory;
-			let drinkGlass = drink.strGlass;
-			let drinkInstruct = drink.strInstructions;
+  ajax("https://www.thecocktaildb.com/api/json/v1/1/random.php", (res) => {
+    let resArr2 = JSON.parse(res).drinks;
+    resArr2.forEach((drink) => {
+      // Cocktail API DOM elements
+      let drinkTitle = drink.strDrink;
+      let drinkCategory = drink.strCategory;
+      let drinkGlass = drink.strGlass;
+      let drinkInstruct = drink.strInstructions;
 
-			// create image element + url
-			let drinkImage = document.createElement('img');
-			drinkImage.setAttribute('id', 'drink-image');
-			drinkImage.src = drink.strDrinkThumb;
+      // create image element + url
+      let drinkImage = document.createElement("img");
+      drinkImage.setAttribute("id", "drink-image");
+      drinkImage.src = drink.strDrinkThumb;
 
-			// add button to generate cocktails
-			const buttonDrink = document.createElement('button');
-			buttonDrink.setAttribute('id', 'drink-button');
-			buttonDrink.addEventListener('click', (evt) => {
-				getCocktails();
-			});
+      // add button to generate cocktails
+      const buttonDrink = document.createElement("button");
+      buttonDrink.setAttribute("id", "drink-button");
+      buttonDrink.addEventListener("click", (evt) => {
+        getCocktails();
+      });
 
-			// generate cocktail info
-			let drinkInfoList = document.createElement('li');
-			drinkInfoList.setAttribute('id', 'drink-info');
-			drinkInfoList.innerHTML = `
+      // generate cocktail info
+      let drinkInfoList = document.createElement("li");
+      drinkInfoList.setAttribute("id", "drink-info");
+      drinkInfoList.innerHTML = `
 		<b>Cocktail:</b> ${drinkTitle}
 		<li><b>Category:</b> ${drinkCategory}</li>
 		<li><b>Glass:</b> ${drinkGlass}</li>
@@ -74,84 +74,83 @@ const getCocktails = () => {
 		<li><b>Make it:</b></li>
 		<li>${drinkInstruct}</li>
 		`;
-			let filteredList = function (obj) {
-				for (var empty in drinkInfoList) {
-					if (drink.strMeasure6 === null) {
-						delete drink.strMeasure6;
-						return filteredList;
-					}
-				}
-			};
-			// append button to drink list
-			buttonDrink.innerHTML = 'New Cocktail Recipe';
-			drinkInfoList.append(buttonDrink);
+      let filteredList = function (obj) {
+        for (var empty in drinkInfoList) {
+          if (drink.strMeasure6 === null) {
+            delete drink.strMeasure6;
+            return filteredList;
+          }
+        }
+      };
+      // append button to drink list
+      buttonDrink.innerHTML = "New Cocktail Recipe";
+      drinkInfoList.append(buttonDrink);
 
-			// create cocktail card + append to page
-			let drinkCard = document.createElement('div');
-			drinkCard.setAttribute('class', 'drink-card');
-			drinkCard.append(drinkInfoList, drinkImage);
+      // create cocktail card + append to page
+      let drinkCard = document.createElement("div");
+      drinkCard.setAttribute("class", "drink-card");
+      drinkCard.append(drinkInfoList, drinkImage);
 
-			let divTwo = document.getElementById('gridItem2');
-			divTwo.innerHTML = '';
-			divTwo.append(drinkCard);
+      let divTwo = document.getElementById("gridItem2");
+      divTwo.innerHTML = "";
+      divTwo.append(drinkCard);
 
-			console.log(filteredList);
-		});
-	});
+      console.log(filteredList);
+    });
+  });
 };
 getCocktails();
 
-//getNewArticles
 ajax(
-	'https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5',
-	(res) => {
-		let resArr = JSON.parse(res).results;
-		resArr
-			.filter((event) => {
-				//console.log(event)
-				return event.section == 'dining'; //&& event.subsection == "food";
-			})
-			.forEach((event, idx) => {
-				if (idx >= 16) return;
-				createCard(event);
+  "https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5",
+  (res) => {
+    let resArr = JSON.parse(res).results;
+    resArr
+      .filter((event) => {
+        //console.log(event)
+        return event.section == "dining"; //&& event.subsection == "food";
+      })
+      .forEach((event, idx) => {
+        if (idx >= 8) return;
+        createCard(event);
 
-				//        //DOM Elements
-				//
-				//        //Create Article Card
-				//        let cardDivElement = document.createElement("div");
-				//        cardDivElement.id = 'cardDiv';
-				//
-				//        //Article Link
-				//        let a = document.createElement("a");
-				//        a.href = event.url;
-				//
-				//        //Card Content
-				//        let sectionElement = document.createElement("section");
-				//        let sectionTitle = document.createElement("h4")
-				//        let sectionDescription = document.createElement("p");
-				//        let pElement = document.createElement("p");
-				//        let imgElement = document.createElement("img");
-				//
-				//        let images = event.multimedia;
-				//        images.forEach((img) =>{
-				//            imgElement.src = img.url;
-				//            return imgElement;
-				//        });
-				//
-				//        //Appending Card Elements
-				//        sectionTitle.innerHTML = event.title;
-				//        sectionDescription.innerHTML = event.abstract;
-				//        mainDiv.append(cardDivElement);
-				//        cardDivElement.append(sectionElement);
-				//        sectionElement.append(imgElement, sectionTitle, pElement, sectionDescription);
-				//
-				//
-				//        console.log(event);
-			});
-		//as much JS code to do what I want
-		//document.body.append(resArr)
-		//console.log(resArr)
-	}
+        //        //DOM Elements
+        //
+        //        //Create Article Card
+        //        let cardDivElement = document.createElement("div");
+        //        cardDivElement.id = 'cardDiv';
+        //
+        //        //Article Link
+        //        let a = document.createElement("a");
+        //        a.href = event.url;
+        //
+        //        //Card Content
+        //        let sectionElement = document.createElement("section");
+        //        let sectionTitle = document.createElement("h4")
+        //        let sectionDescription = document.createElement("p");
+        //        let pElement = document.createElement("p");
+        //        let imgElement = document.createElement("img");
+        //
+        //        let images = event.multimedia;
+        //        images.forEach((img) =>{
+        //            imgElement.src = img.url;
+        //            return imgElement;
+        //        });
+        //
+        //        //Appending Card Elements
+        //        sectionTitle.innerHTML = event.title;
+        //        sectionDescription.innerHTML = event.abstract;
+        //        mainDiv.append(cardDivElement);
+        //        cardDivElement.append(sectionElement);
+        //        sectionElement.append(imgElement, sectionTitle, pElement, sectionDescription);
+        //
+        //
+        //        console.log(event);
+      });
+    //as much JS code to do what I want
+    //document.body.append(resArr)
+    //console.log(resArr)
+  },
 );
 
 //ajax("https://content.guardianapis.com/search?show-elements=image&q=cocktails&api-key=6776e4cc-c284-4535-9eee-8901e1809648"
