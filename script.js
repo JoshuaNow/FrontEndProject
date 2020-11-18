@@ -103,7 +103,7 @@ ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
 }
 getCocktails();
 
-//getNewArticles
+
 ajax("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5"
 , res => {
     let resArr = JSON.parse(res).results
@@ -111,7 +111,7 @@ ajax("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztf
         //console.log(event)
         return event.section == "dining"//&& event.subsection == "food";
     }).forEach((event, idx)=>{
-        if(idx >= 16) return;
+        if(idx >= 8) return;
         createCard(event);
         
         
