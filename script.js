@@ -36,7 +36,7 @@ let body = document.querySelector('body');
 //		//console.log(resArr)
 //	}
 //);
-
+const getCocktails =()=>{
 ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
 	let resArr2 = JSON.parse(res).drinks;
 	resArr2.forEach((drink) => {
@@ -55,7 +55,9 @@ ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
 		const buttonDrink = document.createElement('button');
 		buttonDrink.setAttribute('id', 'drink-button');
 		buttonDrink.addEventListener('click', (evt) => {
-			location.reload();
+            
+        getCocktails();
+            
 		});
 
 		// generate cocktail info
@@ -92,19 +94,24 @@ ajax('https://www.thecocktaildb.com/api/json/v1/1/random.php', (res) => {
 		drinkCard.append(drinkInfoList, drinkImage);
         
         let divTwo = document.getElementById("gridItem2")
+        divTwo.innerHTML = "";
 		divTwo.append(drinkCard);
 
 		console.log(filteredList);
 	});
 });
+}
+getCocktails();
 
+//getNewArticles
 ajax("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=Uou4anPgDJHztfUSXGm7Ru1SiHzqpcv5"
 , res => {
     let resArr = JSON.parse(res).results
     resArr.filter((event)=>{
         //console.log(event)
         return event.section == "dining"//&& event.subsection == "food";
-    }).forEach((event)=>{
+    }).forEach((event, idx)=>{
+        if(idx >= 16) return;
         createCard(event);
         
         
