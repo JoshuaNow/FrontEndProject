@@ -22,6 +22,34 @@
   background-color: antiquewhite;
 }
 
+img {
+    height: auto;
+    width: 100%;
+    justify-content: center;    
+}
+
+#gridItem3 {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+    grid-gap: 5px;
+}
+
+#gridItem3 img {
+    height: auto;
+    width: 100%;
+}
+/*
+.newsCard {
+    display: grid;
+    height: 200px;
+    width: 200px;
+    display: inline;
+    
+}
+*/
+
+
 /*  */
 @media (min-width: 768px) {
   .parent-container {

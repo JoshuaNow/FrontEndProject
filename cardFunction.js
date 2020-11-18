@@ -1,14 +1,13 @@
 // JavaScript Document
+
 export const createCard =(event)=>{
     //DOM Elements
-        let main = document.querySelector("main");
-        let mainDiv = document.createElement("div");
-        main.append(mainDiv);
+        let divThree = document.getElementById("gridItem3")
+
         //Create Article Card
         let cardDivElement = document.createElement("div");
-        cardDivElement.id = 'cardDiv';
+        cardDivElement.classList.add('newsCard');
     
-        
         //Article Link
         let a = document.createElement("a");
         a.href = event.url;
@@ -29,9 +28,8 @@ export const createCard =(event)=>{
         //Appending Card Elements
         sectionTitle.innerHTML = event.title;
         sectionDescription.innerHTML = event.abstract;
-        mainDiv.append(cardDivElement);
-        cardDivElement.append(sectionElement);
-        sectionElement.append(imgElement, sectionTitle, pElement, sectionDescription);
+        cardDivElement.append(imgElement, sectionTitle, pElement, sectionDescription);
+        divThree.append(cardDivElement);
     
         //EventListener
         
@@ -39,8 +37,8 @@ export const createCard =(event)=>{
         cardDivElement.addEventListener("click",(event)=>{
             window.location = a.href;
         })
-        
-        
+        //divThree.append(cardDivElement);
+        console.log(cardDivElement)
         console.log(event);
         
       
