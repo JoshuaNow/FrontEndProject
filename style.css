@@ -123,17 +123,10 @@ img {
   justify-content: center;
 }
 
-#gridItem3 {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  grid-gap: 5px;
-}
-
 #gridItem3 img {
   justify-items: center;
   height: auto;
-  width: 90%;
+  width: 100%;
 }
 
 .newsCard {
@@ -239,6 +232,22 @@ h2 {
   /* box-shadow: 1px 1px 3px 0.5px; */
 }
 
+@media screen and (max-width: 768px) {
+  #gridItem3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 3%;
+
+    /* box-shadow: 1px 1px 3px 0.5px; */
+  }
+}
+
+.raisedbox {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  box-shadow: -1px 1px #e5e5e5, -2px 2px #e5e5e5, -3px 3px #e5e5e5,
+    -4px 4px #e5e5e5, -5px 5px #e5e5e5;
+}
 /* #gridItem3 img {
   max-height: 220px;
   min-height: 220px;
@@ -246,14 +255,8 @@ h2 {
   width: 100%;
 }
 .newsCard h4 {
-<<<<<<< HEAD
-    font-family: 'Roboto Slab', serif;
-    font-weight: 300;
-    
-=======
   font-family: "Roboto Slab", serif;
   font-weight: 300;
->>>>>>> main
 }
 
 .newsCard p {
