@@ -1,145 +1,122 @@
-/* started the whole css to accomidate  */
+/* started the whole css to  */
 .parent-container {
-	display: grid;
-	grid-template-columns: 100%;
-	grid-gap: 10px;
-	justify-content: center;
-	/* grid-template-rows: 30% 30% 30%; */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  justify-content: center;
+  /* grid-template-rows: 30% 30% 30%; */
 }
-.a1 {
-	/* grid-column-start: 1;
-        grid-column-end: 2; */
-	background-color: aqua;
-}
-.a2 {
-	/* grid-column-start: 2;
-        grid-column-end: 3; */
-	background-color: aliceblue;
-}
-.a3 {
-	/* grid-column-start: 3;
-        grid-column-end: 4; */
-	background-color: antiquewhite;
-}
-
-#drink-image {
-	height: auto;
-	width: 100%;
-	justify-content: center;
-}
-#drink-info {
-	font-family: 'Roboto Slab', serif;
-	font-size: 11pt;
-	list-style-type: none;
-	text-align: center;
-}
-#drink-button {
-	background-color: black;
-	color: white;
-	font-family: 'Roboto Slab', serif;
-	font-size: 18px;
-	padding: 5px;
-	margin: 15px;
-}
-#gridItem2 {
-	padding: 15px;
+/* trying to make is responsive so the cards stack on top of each other but it isn't working */
+/* .drink-card {
+  height: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 #gridItem3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 3%;
-    box-shadow: 1px 1px 3px .5px
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
 }
 
 #gridItem3 img {
-    max-height: 220px;
-    min-height: 220px;
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 30%;
+  justify-content: center;
 }
-.newsCard h4 {
-    font-family: 'Roboto Slab', serif;
-    font-weight 300;
-    
-}
-
-.newsCard p {
-    font-weight: 200;
-    font-size: 12px;
-    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif";
-}
-
-/* .newsCard {
-	display: grid;
-	height: 200px;
-	width: 200px;
-	display: inline;
+#drink-image {
+  height: auto;
+  width: 65%;
+  justify-content: center;
 } */
 
-/*  */
+/* @media (min-width: 768px) {
+  .parent-container {
+    /* display: grid; */
+/* grid-template-columns: 30% 30% 30%; */
+/* }
+  .grid-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: aqua;
+  }
+  .grid-item-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: aliceblue;
+  }
+  .grid-item-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    background-color: antiquewhite;
+  }
+  .grid-item-6 {
+    grid-column: span 3;
+  } 
+} */
+/* this is  */
 @media (min-width: 768px) {
-	.parent-container {
-		/* display: grid; */
-		grid-template-columns: 30% 30% 30%;
-	}
-	.grid-item-1 {
-		grid-column-start: 1;
-		grid-column-end: 2;
-		background-color: aqua;
-	}
-	.grid-item-2 {
-		grid-column-start: 2;
-		grid-column-end: 3;
-		background-color: aliceblue;
-	}
-	.grid-item-3 {
-		grid-column-start: 3;
-		grid-column-end: 4;
-		background-color: antiquewhite;
-	}
-}
-
-@media (min-width: 1024px) {
   .parent-container {
     grid-template-columns: 30% 30% 30%;
   }
   .grid-item-1 {
     grid-column-start: 1;
     grid-column-end: 4;
-    background-color: aqua;
+    padding: 3%;
+    font-size: 125%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
   .grid-item-2 {
     grid-column-start: 1;
     grid-column-end: 2;
     background-color: aliceblue;
-    grid-row: span 2;
+    /* grid-row: span 1; */
   }
   .grid-item-3 {
     grid-column-start: 2;
     grid-column-end: 4;
-    background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(231,231,231,1.00) 99.76%);
-    background-image: -moz-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(231,231,231,1.00) 99.76%);
-    background-image: -o-linear-gradient(270deg,rgba(255,255,255,1.00) 0%,rgba(231,231,231,1.00) 99.76%);
-    background-image: linear-gradient(180deg,rgba(255,255,255,1.00) 0%,rgba(231,231,231,1.00) 99.76%);
+    /* background-image: -webkit-linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(231, 231, 231, 1) 99.76%
+    );
+    background-image: -moz-linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(231, 231, 231, 1) 99.76%
+    );
+    background-image: -o-linear-gradient(
+      270deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(231, 231, 231, 1) 99.76%
+    );
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(231, 231, 231, 1) 99.76%
+    ); */
   }
   /* .grid-item-4 {
   } */
-	.grid-item-5 {
-		grid-column-start: 2;
-		grid-column-end: 4;
-	}
-	.grid-item-6 {
-		grid-column-start: -1;
-		grid-column-end: -4;
-	}
+  .grid-item-5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .grid-item-6 {
+    grid-column-start: -1;
+    grid-column-end: -4;
+    padding: 2%;
+  }
 }
-
+/*  */
 video {
-	width: 100%;
-	height: auto;
-	/* justify-content: center; */
+  width: 100%;
+  height: auto;
+  /* justify-content: center; */
 }
+/* this is any other image in html */
 img {
   height: auto;
   width: 100%;
@@ -148,32 +125,158 @@ img {
 
 #gridItem3 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: 1fr;
+
   grid-gap: 5px;
 }
 
 #gridItem3 img {
+  justify-items: center;
+  height: auto;
+  width: 90%;
+}
+
+.newsCard {
+  display: grid;
   height: auto;
   width: 100%;
+  display: inline;
 }
-/*
-.newsCard {
-    display: grid;
-    height: 200px;
-    width: 200px;
-    display: inline;
-    
-}
-*/
+
+/* this is for the video and tittle */
 .div-container {
   position: relative;
   text-align: center;
-  color: white;
 }
 h1 {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
+  color: black; /*color for the font in title*/
+  opacity: 70%;
+  font-size: 200%;
   transform: translate(-50%, -50%);
+}
+h2 {
+  background-color: black;
+  padding: 30px;
+  margin: 0%;
+}
+
+/* This is the style for the drinks button */
+#drink-image {
+  height: auto;
+  width: 100%;
+  justify-content: center;
+}
+#drink-info {
+  font-family: "Roboto Slab", serif;
+  font-size: 125%;
+  list-style-type: none;
+  text-align: center;
+  line-height: 150%;
+}
+#drink-button {
+  /* background-color: black;
+  color: white;
+  font-family: "Roboto Slab", serif;
+  font-size: 18px;
+  padding: 5px;
+  margin: 15px;
+  justify-content: center;
+  align-items: center; */
+  justify-content: center;
+  padding: 0.46em 1.6em;
+  border: 0.1em solid aliceblue;
+  margin: 0 0.2em 0.2em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: ‘Roboto’, sans-serif;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0 0.04em 0.04em black;
+  background-color: black;
+  text-align: center;
+  transition: all 0.15s;
+}
+/* a.button5:hover{
+ text-shadow: 0 0 2em rgba(255,255,255,1);
+ color:#FFFFFF;
+ border-color:#FFFFFF;
+}
+@media all and (max-width:30em){
+ a.button5{
+ display:block;
+ margin:0.4em auto;
+ }
+} */
+
+/* stops here */
+
+/* This is for the food grid */
+#gridItem2 {
+  padding: 15px;
+}
+
+#gridItem3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3%;
+
+  /* box-shadow: 1px 1px 3px 0.5px; */
+}
+
+/* #gridItem3 img {
+  max-height: 220px;
+  min-height: 220px;
+  height: auto;
+  width: 100%;
+}
+.newsCard h4 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+}
+
+.newsCard p {
+  font-weight: 200;
+  font-size: 12px;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans",
+    "DejaVu Sans", Verdana, "sans-serif";
+} */
+
+/* .newsCard {
+	display: grid;
+	height: 200px;
+	width: 200px;
+	display: inline;
+} */
+
+/* this will take the margins off around the website */
+body {
+  margin: 0;
+}
+/* nav bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list {
+  display: inline;
+  padding: 3%;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: lighter;
+  font-size: 60%;
+}
+/*  */
+
+html {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
