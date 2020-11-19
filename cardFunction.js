@@ -39,40 +39,11 @@ export const createCard = (event) => {
         
 	});
     
-    cardDivElement.addEventListener('mouseover',(event)=>{
-       event.target.classList.add('raisedbox');
-    });
+//    cardDivElement.addEventListener('mouseover',(event)=>{
+//       event.target.classList.toggle('raisedbox');
+//    });
 	//divThree.append(cardDivElement);
 	console.log(cardDivElement);
 	console.log(event);
 };
 
-//export const cocktailCards =(event)=>{
-//    //DOM Elements
-//        let main = document.querySelector("main");
-//        let mainDiv = document.createElement("div");
-//        main.append(mainDiv);
-//        //Create Article Card
-//        let cardDivElement = document.createElement("div");
-//        cardDivElement.id = 'cardDiv';
-//
-//
-//        //Article Link
-//        let a = document.createElement("a");
-//        a.href = event.webUrl;
-//
-//        //Card Content
-//        let sectionElement = document.createElement("section");
-//        let sectionTitle = document.createElement("h4")
-//        let sectionDescription = document.createElement("p");
-//        let pElement = document.createElement("p");
-//        let imgElement = document.createElement("img");
-//
-//        sectionTitle.innerHTML = event.webTitle;
-//        mainDiv.append(cardDivElement);
-//        cardDivElement.append(sectionElement);
-//        sectionElement.append(imgElement, sectionTitle, pElement, sectionDescription);
-//
-//
-//
-//}
