@@ -88,7 +88,7 @@ const getArticles = () => {
 					return event.section == 'dining'; //&& event.subsection == "food";
 				})
 				.forEach((event, idx) => {
-					if (idx >= 8) return;
+					if (idx >= 4) return;
 					createCard(event);
 				});
 		}

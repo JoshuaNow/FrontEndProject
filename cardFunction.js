@@ -16,19 +16,21 @@ export const createCard = (event) => {
 	let sectionElement = document.createElement('section');
 	let sectionTitle = document.createElement('h4');
 	let sectionDescription = document.createElement('p');
-	let pElement = document.createElement('p');
+	// let pElement = document.createElement('p');
 	let imgElement = document.createElement('img');
+	let imgHolder = document.createElement('div');
+	imgHolder.classList.add('img-holder');
+	console.log(event.multimedia);
 
-	let images = event.multimedia;
-	images.forEach((img) => {
-		imgElement.src = img.url;
-		return imgElement;
-	});
+	imgElement.src = event.multimedia.find(
+		(img) => img.format == 'superJumbo'
+	).url;
+	imgHolder.append(imgElement);
 
 	//Appending Card Elements
 	sectionTitle.innerHTML = event.title;
 	sectionDescription.innerHTML = event.abstract;
-	cardDivElement.append(imgElement, sectionTitle, pElement, sectionDescription);
+	cardDivElement.append(imgHolder, sectionTitle, sectionDescription);
 	divThree.append(cardDivElement);
 
 	//EventListener
