@@ -34,8 +34,14 @@ export const createCard = (event) => {
 	//EventListener
 
 	cardDivElement.addEventListener('click', (event) => {
-		window.location = a.href;
+        event.preventDefault();
+		window.open(a.href);
+        
 	});
+    
+    cardDivElement.addEventListener('mouseover',(event)=>{
+       event.target.classList.add('raisedbox');
+    });
 	//divThree.append(cardDivElement);
 	console.log(cardDivElement);
 	console.log(event);

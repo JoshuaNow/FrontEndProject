@@ -226,7 +226,15 @@ h2 {
 
   /* box-shadow: 1px 1px 3px 0.5px; */
 }
-
+.raisedbox { 
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    box-shadow:  -1px 1px #E5E5E5,
+         -2px 2px #E5E5E5,
+         -3px 3px #E5E5E5,
+         -4px 4px #E5E5E5,
+         -5px 5px #E5E5E5;
+}
 /* #gridItem3 img {
   max-height: 220px;
   min-height: 220px;
@@ -234,8 +242,14 @@ h2 {
   width: 100%;
 }
 .newsCard h4 {
+<<<<<<< HEAD
+    font-family: 'Roboto Slab', serif;
+    font-weight: 300;
+    
+=======
   font-family: "Roboto Slab", serif;
   font-weight: 300;
+>>>>>>> main
 }
 
 .newsCard p {
