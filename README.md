@@ -16,8 +16,11 @@ This project was created using the following languages:
 ## Contributors 
 
 Joshua Lopez
+
 Eunice Pereira
+
 Robert Foster 
+
 Michael Young 
 
 Our team practiced manipulating both APIs through JavaScript, along with DOM manipulation. We created our website without the use of frameworks to flex our HTML and CSS knowledge.
